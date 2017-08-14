@@ -12,12 +12,22 @@ class App extends Component {
 
     this.state = {
       tabs:routes,
-      currentTab:routes[0]
+      currentTab:routes[0],
+      companyName: 'loco'
     }
+  }
+
+  updateState(key,value){
+    let newSubState = {}
+
+    newSubState[key] = value
+
+    this.setState(newSubState)
   }
 
   renderComponent(component) {
     return (props) => {
+      props.updateState = this.updateState.bind(this)
       return React.createElement(component, {
         ...props
       })
@@ -38,13 +48,13 @@ class App extends Component {
             <div className="navigation inline">
               <Navigator tabs={this.state.tabs} clickHandle={changeTab} ></Navigator>
             </div>
-            <div className="main-pane inline">{this.renderComponent(this.state.currentTab.mainComponent)()}</div>
+            <div className="main-pane inline">{this.renderComponent(this.state.currentTab.mainComponent)(this.state)}</div>
             </div>
           <div className="viewer-pane inline">
             <div className="phone-viewer">
               <img src={process.env.PUBLIC_URL + '/img/phone.jpg'} className="phone-image"/>
               <div className="in-phone">
-                {this.renderComponent(this.state.currentTab.viewComponent)()}
+                {this.renderComponent(this.state.currentTab.viewComponent)(this.state)}
               </div>
             </div>
           </div>

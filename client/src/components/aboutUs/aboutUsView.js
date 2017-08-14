@@ -4,8 +4,13 @@
 import React, { Component } from 'react'
 
 export default class AboutUsView extends Component {
+
+  constructor (props ){
+    super(props)
+  }
+
   render() {
-    return ( <div>View about us</div>
+    return ( <div>View about us: {this.props.companyName}</div>
     )
   }
 }
