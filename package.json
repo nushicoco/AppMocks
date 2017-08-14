@@ -1,0 +1,27 @@
+{
+  "name": "winder-crm",
+  "version": "1.0.0",
+  "description": "CRM-lite",
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "concurrently \"npm run dev\" \"npm run client\"",
+    "client": "cd client && npm start",
+    "bclient": "cd client && npm run build",
+    "iclient": "cd client && npm i"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "nodemon": "^1.11.0"
+  }
+}
