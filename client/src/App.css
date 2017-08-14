@@ -23,7 +23,7 @@
 }
 
 .right-panel {
-    width: 75%;
+    width: 65%;
 }
 .navigation{
     background-color: red;
@@ -36,8 +36,9 @@
 }
 .viewer-pane{
     background-color: blue;
-    height: 200px;
-    width: 25%;
+    height: auto;
+    width: 35%;
+
 }
 
 .phone-viewer{
@@ -51,9 +52,18 @@
 
 .in-phone{
     position: absolute;
-    top: 100px;
+    top: 10%;
     left: 0;
     width: 100%;
+    height: 90%;
+    overflow: hidden;
+    font-size: smaller;
+    word-wrap: break-word;
+}
+
+.form-container{
+    padding: 25px;
+    text-align: left;
 }
 
 @keyframes App-logo-spin {

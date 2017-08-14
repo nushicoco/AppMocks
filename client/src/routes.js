@@ -5,6 +5,8 @@ import React  from 'react';
 
 import AboutUsForm from './components/aboutUs/aboutUsForm'
 import AboutUsView from './components/aboutUs/aboutUsView'
+import ImagesForm from './components/images/imagesForm'
+import ImagesView from './components/images/imagesView'
 
 export const routes = [
   {
@@ -13,7 +15,9 @@ export const routes = [
     viewComponent: AboutUsView
   },
   {
-    name:"images"
+    name:"images",
+    mainComponent: ImagesForm,
+    viewComponent: ImagesView
   },
   {
     name:"opening hours"

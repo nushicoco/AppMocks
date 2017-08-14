@@ -3,6 +3,8 @@
  */
 import React, { Component } from 'react'
 
+import './aboutUs.css'
+
 export default class AboutUsView extends Component {
 
   constructor (props ){
@@ -10,7 +12,12 @@ export default class AboutUsView extends Component {
   }
 
   render() {
-    return ( <div>View about us: {this.props.companyName}</div>
+    return (
+      <div className="in-phone-view">
+        <h1>{this.props.companyName}</h1>
+        <h3>{this.props.companyDescription}</h3>
+        <div className="website-url"><a  href={this.props.companyURL}>{this.props.companyURL}</a></div>
+      </div>
     )
   }
 }
