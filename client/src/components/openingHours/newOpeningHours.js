@@ -3,35 +3,41 @@
  */
 import React from 'react'
 import DaysChooser from './daysChooser'
+import HoursChooser from './hoursChooser'
 
 import './openingHours.css'
 
 export default class NewOpeningHours extends React.Component {
-  getDays(daysArray){
-    this.days = daysArray
+
+  constructor () {
+    super()
+    this.state = {
+      days: {},
+      hours: {}
+    }
+  }
+
+  getDays(days){
+    this.setState({days})
+  }
+  getHours(hours){
+    this.setState({hours})
   }
 
   addClicked() {
     let newOpeningHours = {
-      days:this.days,
-      start: this.start,
-      end: this.end
+      days: this.state.days,
+      hours: this.state.hours
     }
 
     this.props.handleAdd(newOpeningHours)
-  }
-
-  hourChanged (e,type){
-    this[type] = e.target.value
   }
 
   render () {
     return (
       <div>
         <DaysChooser updateDays={this.getDays.bind(this)}/>
-        <div className="field-label">
-          From <input onChange={(e) => this.hourChanged(e,"start")}/> To <input onChange={(e) => this.hourChanged(e,"end")}/>
-        </div>
+        <HoursChooser updateHours={this.getHours.bind(this)}/>
         <button onClick={() => this.addClicked()}>Add</button>
       </div>
     )

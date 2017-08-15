@@ -4,7 +4,6 @@
 import React, { Component } from 'react'
 
 import NewOpeningHours from './newOpeningHours'
-import {DaysInWeek} from '../../consts'
 
 
 import './openingHours.css'
@@ -33,17 +32,17 @@ export default class OpeningHoursForm extends Component {
     this.props.updateState("openingHours", arr)
   }
 
-  getPrettyDays(daysSet){
-    let ret = []
-    for (let day of daysSet){
-      ret.push(DaysInWeek[day])
+  getPretty(time){
+    if (!time.end || time.start === time.end){
+      return time.start
     }
-    return ret.join(",")
+      return `${time.start} - ${time.end}`
+
   }
 
   renderHour(openingHour){
     return (
-      <div>{this.getPrettyDays(openingHour.days)} {openingHour.start} - {openingHour.end}</div>
+      <div>{`${this.getPretty(openingHour.days)} ${this.getPretty(openingHour.hours)}`}</div>
     )
   }
 

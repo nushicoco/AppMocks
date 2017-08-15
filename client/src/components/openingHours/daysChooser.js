@@ -10,49 +10,47 @@ import {DaysInWeek} from '../../consts'
 export default class DaysChooser extends React.Component {
   constructor (props) {
     super(props)
-    this.days = new Set()
-  }
-  showCheckboxes() {
-    let checkboxes = document.getElementById("checkboxes");
-    if (!this.expanded) {
-      checkboxes.style.display = "block";
-      this.expanded = true;
-    } else {
-      checkboxes.style.display = "none";
-      this.expanded = false;
+    this.state = {
+      days:{},
+      startSelectedIndex: 0
     }
+  }
+  updateStartDay(e) {
+    let days = { start: e.target.value }
+    this.setState({
+      startSelectedIndex:e.target.selectedIndex,
+      days
+    })
+    this.props.updateDays(days)
   }
 
-  updateDays(e) {
-    let index = +e.target.attributes["data-index"].value
-    // this.days[index] = !this.days[index]
-    if (this.days.has(index)){
-      this.days.delete(index)
-    }else{
-      this.days.add(index)
+  updateEndDay(e) {
+    let days = {
+        start:this.state.days.start,
+        end: e.target.value
     }
-    this.props.updateDays(this.days)
+    this.setState({days})
+    this.props.updateDays(days)
   }
 
   render() {
     return (
       <div className="multiselect">
-        <div className="selectBox" onClick={() => this.showCheckboxes()}>
-          <select>
-            <option>Select days</option>
+        <div className="selectBox">
+          From
+          <select onChange={(e) => this.updateStartDay(e)}>
+            <option>Select a Day</option>
+          { DaysInWeek.map((day,index) => <option data-index={index} key={index}>{day}</option>)}
           </select>
-          <div className="overSelect"></div>
-        </div>
-        <div id="checkboxes">
-          { DaysInWeek.map((day,index) => {
-            return (<label htmlFor={day} key={day} className="days-label">
-              <input type="checkbox" id={day} data-index={index} onChange={(e) => this.updateDays(e)}/>
-              {day}
-            </label>)})}
+          { this.state.days.start &&
+          <span> TO
+            <select onChange={(e) => this.updateEndDay(e)}>
+          { DaysInWeek.slice(this.state.startSelectedIndex - 1).map((day,index) => <option data-index={index} key={index}>{day}</option>)}
+          </select>
+          </span>
+          }
         </div>
       </div>
     )
   }
 }
-
-// export default DaysChooser
