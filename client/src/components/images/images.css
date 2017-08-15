@@ -1,0 +1,15 @@
+.images-container {
+    overflow-y: scroll;
+    background-color: yellow;
+
+    /*  todo need to change this to something responsive */
+    height: 300px;
+}
+
+.footer{
+    position: absolute;
+    bottom: 20%;
+    width: 80%;
+    text-align: center;
+    background-color: white;
+}

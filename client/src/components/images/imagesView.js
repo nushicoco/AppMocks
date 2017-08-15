@@ -3,14 +3,20 @@
  */
 import React, { Component } from 'react'
 
+import './images.css'
+import '../../common.css'
+
 export default class ImagesView extends Component {
 
-  constructor (props ){
-    super(props)
-  }
-
   render() {
-    return ( <div>View about us: {this.props.imagesQuery}</div>
+    return (
+      <div className="in-phone-view">
+        <h1>{this.props.companyName}</h1>
+        <div className="images-container">
+          {this.props.images && this.props.images.map(img => <div key={img.url}><img src={img.url} alt={img.id}/></div>)}
+        </div>
+        {/*<div className="footer"></div>*/}
+      </div>
     )
   }
 }

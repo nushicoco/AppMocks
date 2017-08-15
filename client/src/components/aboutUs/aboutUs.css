@@ -1,25 +1,10 @@
-.field-label {
-    padding: 10px 0px 10px 0px;
-    font-size: large;
-}
-
-.field-input{
-    width: 85%;
-    resize: none;
-    font-size: medium;
-}
-
 .input-description{
     height: 100px;
-}
-
-.in-phone-view{
-    margin: 15px;
 }
 
 .website-url{
     position: absolute;
     bottom: 20%;
-    width: 100%;
+    width: 80%;
     text-align: center;
 }

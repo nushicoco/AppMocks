@@ -13,6 +13,9 @@ class App extends Component {
     this.state = {
       tabs:routes,
       currentTab:routes[0],
+      // DEBUG todo remove this
+      apiToken:"6162723-c19e8770101d3873c953539fa",
+      companyName:"Como"
     }
   }
 
@@ -47,7 +50,7 @@ class App extends Component {
             </div>
           <div className="viewer-pane inline">
             <div className="phone-viewer">
-              <img src={process.env.PUBLIC_URL + '/img/phone.png'} className="phone-image"/>
+              <img src={process.env.PUBLIC_URL + '/img/phone.png'} className="phone-image" alt="phone"/>
               <div className="in-phone">
                 {this.renderComponent(this.state.currentTab.viewComponent)(this.state)}
               </div>

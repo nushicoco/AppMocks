@@ -1,8 +1,6 @@
 /**
  * Created by einavcarmon on 14/08/2017.
  */
-import React  from 'react';
-
 import AboutUsForm from './components/aboutUs/aboutUsForm'
 import AboutUsView from './components/aboutUs/aboutUsView'
 import ImagesForm from './components/images/imagesForm'

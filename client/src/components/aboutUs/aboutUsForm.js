@@ -4,6 +4,7 @@
 import React, { Component } from 'react'
 
 import './aboutUs.css'
+import '../../common.css'
 
 export default class AboutUsForm extends Component {
   constructor (props ){
@@ -55,7 +56,7 @@ export default class AboutUsForm extends Component {
       <div className="form-container">
         {this.fields.map(field => {
           return (
-            <div>
+            <div key={field.name}>
               <div className="field-label"> {field.label}</div>
               {this.renderInput(field)}
             </div>
