@@ -2,6 +2,7 @@
  * Created by einavcarmon on 15/08/2017.
  */
 import React from 'react'
+import { FormControl } from 'react-bootstrap'
 
 import './openingHours.css'
 
@@ -38,16 +39,23 @@ export default class HoursChooser extends React.Component {
     return (
       <div className="multiselect">
         <div className="selectBox">
-          From
-          <select onChange={(e) => this.updateStartHour(e)}>
+          <label>From: </label>
+          <FormControl componentClass="select"
+                       placeholder="Select an Hour"
+                       className="time-select"
+                       onChange={(e) => this.updateStartHour(e)}>
             <option>Select an Hour</option>
           { Hours.map((hour,index) => <option data-index={index} key={index}>{`${hour}:00`}</option>)}
-          </select>
+          </FormControl>
           { this.state.hours.start &&
-          <span> TO
-            <select onChange={(e) => this.updateEndHour(e)}>
+          <span>
+            <label> To: </label>
+            <FormControl componentClass="select"
+                         placeholder="Select an Hour"
+                         className="time-select"
+                         onChange={(e) => this.updateEndHour(e)}>
           { Hours.slice(this.state.startSelectedIndex - 1).map((hour,index) => <option data-index={index} key={index}>{`${hour}:00`}</option>)}
-          </select>
+          </FormControl>
           </span>
           }
         </div>

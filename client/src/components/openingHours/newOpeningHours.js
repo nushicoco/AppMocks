@@ -2,6 +2,8 @@
  * Created by einavcarmon on 15/08/2017.
  */
 import React from 'react'
+import { Button } from 'react-bootstrap'
+
 import DaysChooser from './daysChooser'
 import HoursChooser from './hoursChooser'
 
@@ -35,10 +37,16 @@ export default class NewOpeningHours extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="new-hour">
         <DaysChooser updateDays={this.getDays.bind(this)}/>
         <HoursChooser updateHours={this.getHours.bind(this)}/>
-        <button onClick={() => this.addClicked()}>Add</button>
+        <div className="button-container">
+          <Button className="btn-add"
+                  onClick={() => this.addClicked()}
+                  disabled={!this.state.days.start || !this.state.hours.start}>
+            Add
+          </Button>
+        </div>
       </div>
     )
   }

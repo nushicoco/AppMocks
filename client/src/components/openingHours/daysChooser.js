@@ -2,9 +2,10 @@
  * Created by einavcarmon on 15/08/2017.
  */
 import React from 'react'
+import { FormControl } from 'react-bootstrap'
 
 import './openingHours.css'
-import {DaysInWeek} from '../../consts'
+import { DaysInWeek } from '../../consts'
 
 
 export default class DaysChooser extends React.Component {
@@ -35,22 +36,25 @@ export default class DaysChooser extends React.Component {
 
   render() {
     return (
-      <div className="multiselect">
-        <div className="selectBox">
-          From
-          <select onChange={(e) => this.updateStartDay(e)}>
+        <div>
+          <label>From: </label>
+          <FormControl onChange={(e) => this.updateStartDay(e)}
+                       componentClass="select"
+                       placeholder="Select a Day"
+                       className="time-select">
             <option>Select a Day</option>
           { DaysInWeek.map((day,index) => <option data-index={index} key={index}>{day}</option>)}
-          </select>
+          </FormControl>
           { this.state.days.start &&
-          <span> TO
-            <select onChange={(e) => this.updateEndDay(e)}>
+          <span> <label> To </label>
+            <FormControl componentClass="select"
+                         placeholder="Select a Day"
+                         className="time-select"
+                         onChange={(e) => this.updateEndDay(e)}>
           { DaysInWeek.slice(this.state.startSelectedIndex - 1).map((day,index) => <option data-index={index} key={index}>{day}</option>)}
-          </select>
-          </span>
+            </FormControl></span>
           }
         </div>
-      </div>
     )
   }
 }

@@ -1,6 +1,5 @@
 .images-container {
     overflow-y: scroll;
-    background-color: yellow;
 
     /*  todo need to change this to something responsive */
     height: 300px;

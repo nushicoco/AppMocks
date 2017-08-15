@@ -56,11 +56,11 @@ class App extends Component {
 
     return (
       <div className="App" style={this.getStyle()}>
-        <div> <h1>Some Header</h1></div>
+        <div> <h1>Einav's App Mocker</h1></div>
         <div className="container">
           <div className="right-panel inline">
             <div className="navigation inline">
-              <Brander updateState={this.updateState.bind(this)}/>
+              {/*<Brander updateState={this.updateState.bind(this)}/>*/}
               <Navigator tabs={this.state.tabs} clickHandle={this.updateState.bind(this,"currentTab")} ></Navigator>
             </div>
             <div className="main-pane inline">{this.renderComponent(this.state.currentTab.mainComponent)(this.state)}</div>

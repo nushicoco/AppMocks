@@ -4,6 +4,7 @@
 import React, { Component } from 'react'
 
 import NewOpeningHours from './newOpeningHours'
+import HoursDisplay from './hoursDisplay'
 
 
 import './openingHours.css'
@@ -31,27 +32,20 @@ export default class OpeningHoursForm extends Component {
     arr.push(newOpeningHours)
     this.props.updateState("openingHours", arr)
   }
-
-  getPretty(time){
-    if (!time.end || time.start === time.end){
-      return time.start
-    }
-      return `${time.start} - ${time.end}`
-
-  }
-
-  renderHour(openingHour){
-    return (
-      <div>{`${this.getPretty(openingHour.days)} ${this.getPretty(openingHour.hours)}`}</div>
-    )
+  
+  handleDelete(index){
+    let arr = this.state.openingHours.slice()
+    arr.splice(index, 1);
+    this.props.updateState("openingHours", arr)
   }
 
   render() {
     return (
       <div className="form-container">
         <NewOpeningHours handleAdd={this.handleAdd.bind(this)}/>
-        {this.state.openingHours.length > 0 && this.state.openingHours.map(openingHour => this.renderHour(openingHour))}
+        <HoursDisplay hours={this.state.openingHours} deleteHour={this.handleDelete.bind(this)}/>
       </div>
     )
   }
 }
+
