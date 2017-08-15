@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import {routes} from './routes'
 import Navigator from './components/navigator'
+import Brander from './components/brander'
 
 import './App.css';
 
@@ -27,6 +28,21 @@ class App extends Component {
     this.setState(newSubState)
   }
 
+  getStyle() {
+    let color1 = 'white'
+    let color2 = 'black'
+
+    if (this.state.colors){
+      color1 = `rgba(${this.state.colors[0]._rgb.join(",")})`
+      color2 = `rgba(${this.state.colors[1]._rgb.join(",")})`
+    }
+
+    return {
+      backgroundColor: color1,
+      color:color2
+    }
+  }
+
   renderComponent(component) {
     return (props) => {
       props.updateState = this.updateState.bind(this)
@@ -39,11 +55,12 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App">
+      <div className="App" style={this.getStyle()}>
         <div> <h1>Some Header</h1></div>
         <div className="container">
           <div className="right-panel inline">
             <div className="navigation inline">
+              <Brander updateState={this.updateState.bind(this)}/>
               <Navigator tabs={this.state.tabs} clickHandle={this.updateState.bind(this,"currentTab")} ></Navigator>
             </div>
             <div className="main-pane inline">{this.renderComponent(this.state.currentTab.mainComponent)(this.state)}</div>

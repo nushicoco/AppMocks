@@ -4,7 +4,7 @@ console.log('Starting Server......')
 // Config
 // require('dotenv-safe').load() // Load env vars from ./.env
 console.log(`NODE_ENV =${process.env.NODE_ENV}`)
-const port = process.env.PORT
+const port = process.env.PORT || 3001
 console.log(`Port = ${port}`)
 
 const express = require('express')
