@@ -5,7 +5,17 @@ import React, { Component } from 'react'
 
 import './brander.css'
 
-export default class Brander extends Component {
+export class EmptyView extends Component {
+  render() {
+    return (
+      <div className="in-phone-view">
+        <h1>{this.props.companyName}</h1>
+      </div>
+    )
+  }
+}
+
+export class Brander extends Component {
 
   readFile(e){
     console.log(e.target);
@@ -13,7 +23,7 @@ export default class Brander extends Component {
 
   render() {
     return ( <div>
-        <button className="brander-button">COCO</button>
+        <button className="brander-button" onClick={() => this.props.updateState("colors", null)}>Reset</button>
         <ImageUpload updateState={this.props.updateState}/>
       </div>
     )

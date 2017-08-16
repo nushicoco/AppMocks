@@ -8,6 +8,8 @@ import ImagesView from './components/images/imagesView'
 import OpeningHoursForm from './components/openingHours/openingHoursForm'
 import OpeningHoursView from './components/openingHours/openingHoursView'
 
+import {Brander, EmptyView} from './components/brander'
+
 export const routes = [
   {
     name:"about us",
@@ -23,5 +25,11 @@ export const routes = [
     name:"opening hours",
     mainComponent: OpeningHoursForm,
     viewComponent: OpeningHoursView
+  }
+  ,
+  {
+    name:"branding",
+    mainComponent: Brander,
+    viewComponent: EmptyView
   }
 ]
