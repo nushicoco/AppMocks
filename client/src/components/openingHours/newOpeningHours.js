@@ -41,7 +41,7 @@ export default class NewOpeningHours extends React.Component {
         <TimesChooser updateTimes={this.getDays.bind(this)} times={DaysInWeek} label="Days  "/>
         <TimesChooser updateTimes={this.getHours.bind(this)} times={Hours} label="Hours"/>
         <div className="button-container">
-          <Button className="btn-add"
+          <Button className="btn-action"
                   onClick={() => this.addClicked()}
                   disabled={!this.state.days.start || !this.state.hours.start}>
             Add

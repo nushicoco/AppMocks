@@ -3,6 +3,8 @@
  */
 import React, { Component } from 'react'
 
+import { FormControl } from 'react-bootstrap'
+
 import './aboutUs.css'
 
 export default class AboutUsForm extends Component {
@@ -40,14 +42,17 @@ export default class AboutUsForm extends Component {
 
   renderInput(field) {
 
-    let fieldProps = {
-      className: `${field.className} field-input`,
-      onBlur: (e) => this.props.updateState(field.name, e.target.value),
-      defaultValue: this.state[field.name]
-    }
-    return (
-      React.createElement(field.type, fieldProps)
-    )
+    return (<FormControl
+      className={`${field.className} field-input`}
+      onBlur={(e) => this.props.updateState(field.name, e.target.value)}
+      id="formControlsText"
+      type={field.type}
+      style={{height: field.type === "textarea" ? '100px' : 'auto'}} // Hack b/c of react-bootstrap
+      componentClass={field.type}
+      label="Text"
+      placeholder="Enter text"
+      defaultValue={this.state[field.name]}
+    />)
   }
 
   render() {
@@ -56,7 +61,7 @@ export default class AboutUsForm extends Component {
         {this.fields.map(field => {
           return (
             <div key={field.name}>
-              <div className="field-label"> {field.label}</div>
+              <label className="field-label"> {field.label}</label>
               {this.renderInput(field)}
             </div>
           )

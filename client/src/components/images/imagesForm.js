@@ -2,6 +2,7 @@
  * Created by einavcarmon on 14/08/2017.
  */
 import React, { Component } from 'react'
+import { FormControl, Button } from 'react-bootstrap'
 import axios from 'axios'
 
 import './images.css'
@@ -56,14 +57,15 @@ export default class ImagesForm extends Component {
 
   renderInput(field) {
 
-    let fieldProps = {
-      className: `${field.className} field-input`,
-      onBlur: (e) => this.props.updateState(field.name, e.target.value),
-      defaultValue: this.state[field.name]
-    }
-    return (
-      React.createElement(field.type, fieldProps)
-    )
+    return (<FormControl
+      className={`${field.className} field-input`}
+      onBlur={(e) => this.props.updateState(field.name, e.target.value)}
+      id="formControlsText"
+      type={field.type}
+      label="Text"
+      placeholder="Enter text"
+      defaultValue={this.state[field.name]}
+    />)
   }
 
   render() {
@@ -72,12 +74,12 @@ export default class ImagesForm extends Component {
         {this.fields.map(field => {
           return (
             <div key={field.name}>
-              <div className="field-label"> {field.label}</div>
+              <label className="field-label"> {field.label}</label>
               {this.renderInput(field)}
             </div>
           )
         })}
-        <button onClick={() => this.searchImages()}>Search</button>
+        <div className="button-container"><Button className="btn-action" onClick={() => this.searchImages()}>Search</Button></div>
       </div>
     )
   }
