@@ -4,8 +4,8 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 
-import DaysChooser from './daysChooser'
-import HoursChooser from './hoursChooser'
+import TimesChooser from './timesChooser'
+import { DaysInWeek, Hours } from '../../consts'
 
 import './openingHours.css'
 
@@ -38,8 +38,8 @@ export default class NewOpeningHours extends React.Component {
   render () {
     return (
       <div className="new-hour">
-        <DaysChooser updateDays={this.getDays.bind(this)}/>
-        <HoursChooser updateHours={this.getHours.bind(this)}/>
+        <TimesChooser updateTimes={this.getDays.bind(this)} times={DaysInWeek}/>
+        <TimesChooser updateTimes={this.getHours.bind(this)} times={Hours}/>
         <div className="button-container">
           <Button className="btn-add"
                   onClick={() => this.addClicked()}
