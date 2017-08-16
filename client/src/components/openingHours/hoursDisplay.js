@@ -60,7 +60,7 @@ export default class HoursDisplay extends Component {
 
   render () {
     return (
-      <div>
+      <div className={!this.props.showOnMobile ? 'mobile-hide' : 'hours-display'}>
         <h4>Opening Hours</h4>
         {this.state.openingHours.length === 0
         ? this.renderEmptyView()

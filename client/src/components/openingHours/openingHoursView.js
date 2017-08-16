@@ -13,7 +13,7 @@ export default class OpeningHoursView extends Component {
     return (
       <div className="in-phone-view">
         <h1>{this.props.companyName}</h1>
-        <HoursDisplay hours={this.props.openingHours} viewOnly={true}/>
+        <HoursDisplay showOnMobile={ true } hours={this.props.openingHours} viewOnly={true}/>
       </div>
     )
   }

@@ -42,7 +42,7 @@ export default class OpeningHoursForm extends Component {
     return (
       <div className="form-container">
         <NewOpeningHours handleAdd={this.handleAdd.bind(this)}/>
-        <HoursDisplay hours={this.state.openingHours} deleteHour={this.handleDelete.bind(this)}/>
+        <HoursDisplay showOnMobile={ false } hours={this.state.openingHours} deleteHour={this.handleDelete.bind(this)}/>
       </div>
     )
   }

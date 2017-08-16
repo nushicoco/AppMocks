@@ -4,7 +4,22 @@
 
 .website-url{
     position: absolute;
-    bottom: 20%;
+    bottom: 10%;
     width: 80%;
     text-align: center;
+    left:0;
+    font-size: medium;
+    /*background-color: yellowgreen;*/
+}
+
+@media screen and (min-width: 50em) {
+    .website-url{
+        bottom: 40%;
+    }
+}
+
+@media screen and (min-width: 50em) and (max-width: 1200px) {
+    .website-url{
+        bottom: 50%;
+    }
 }

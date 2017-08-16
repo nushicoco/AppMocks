@@ -35,21 +35,21 @@ export default class TimesChooser extends React.Component {
   render() {
     return (
         <div>
-          <label>From: </label>
+          <label>{this.props.label}: </label>
           <FormControl onChange={(e) => this.updateStartTime(e)}
                        componentClass="select"
-                       placeholder="Select a Time"
+                       placeholder="Select"
                        className="time-select">
-            <option>Select a Time</option>
+            <option>Select</option>
           { this.props.times.map((time,index) => <option data-index={index} key={index}>{time}</option>)}
           </FormControl>
           { this.state.times.start &&
           <span> <label> To </label>
             <FormControl componentClass="select"
-                         placeholder="Select a Time"
+                         placeholder="Select"
                          className="time-select"
                          onChange={(e) => this.updateEndTime(e)}>
-          { this.props.times.slice(this.state.startSelectedIndex - 1).map((time,index) => <option data-index={index} key={index}>{time}</option>)}
+            { this.props.times.slice(this.state.startSelectedIndex - 1).map((time,index) => <option data-index={index} key={index}>{time}</option>)}
             </FormControl></span>
           }
         </div>
