@@ -15,7 +15,40 @@ class App extends Component {
       currentTab:routes[0],
       // DEBUG todo remove this
       apiToken:"6162723-c19e8770101d3873c953539fa",
-      companyName:"Como"
+      companyName:"Como",
+      companyDescription:"We can collect detailed information about our customers and develop our marketing strategy accordingly. Campaigns that drive traffic from the pump to the store",
+      companyURL:"http://www.como.com",
+      openingHours: [
+        {days: {start: "Sunday", end:"Monday"},
+          hours: {start: "10:00", end:"14:00"}},
+        {days: {start: "Tuesday", end:"Saturday"},
+          hours: {start: "10:00", end:"16:00"}},
+        {days: {start: "Sunday", end:"Monday"},
+          hours: {start: "10:00", end:"14:00"}},
+        {days: {start: "Tuesday", end:"Saturday"},
+          hours: {start: "10:00", end:"16:00"}},
+        {days: {start: "Sunday", end:"Monday"},
+          hours: {start: "10:00", end:"14:00"}},
+        {days: {start: "Tuesday", end:"Saturday"},
+          hours: {start: "10:00", end:"16:00"}},
+        {days: {start: "Sunday", end:"Monday"},
+          hours: {start: "10:00", end:"14:00"}},
+        {days: {start: "Tuesday", end:"Saturday"},
+          hours: {start: "10:00", end:"16:00"}},
+        {days: {start: "Sunday", end:"Monday"},
+          hours: {start: "10:00", end:"14:00"}},
+        {days: {start: "Tuesday", end:"Saturday"},
+          hours: {start: "10:00", end:"16:00"}},
+        {days: {start: "Sunday", end:"Monday"},
+          hours: {start: "10:00", end:"14:00"}},
+        {days: {start: "Tuesday", end:"Saturday"},
+          hours: {start: "10:00", end:"16:00"}},
+        {days: {start: "Sunday", end:"Monday"},
+          hours: {start: "10:00", end:"14:00"}},
+        {days: {start: "Tuesday", end:"Saturday"},
+          hours: {start: "10:00", end:"16:00"}}
+      ]
+
     }
   }
 
@@ -56,7 +89,7 @@ class App extends Component {
     return (
       <div className="App" style={this.getStyle()}>
         <div> <h1>Einav's App Mocker</h1></div>
-        <div className="container">
+        <div className="app-container">
           <div className="right-panel">
             <div className="navigation">
               <Navigator tabs={this.state.tabs}

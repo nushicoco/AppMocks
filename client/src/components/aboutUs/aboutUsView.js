@@ -11,7 +11,7 @@ export default class AboutUsView extends Component {
     return (
       <div className="in-phone-view">
         <h1>{this.props.companyName}</h1>
-        <h3>{this.props.companyDescription}</h3>
+        <h4>{this.props.companyDescription}</h4>
         <div className="website-url">Join us on: <a  href={this.props.companyURL} target="_blank">{this.props.companyURL}</a></div>
       </div>
     )

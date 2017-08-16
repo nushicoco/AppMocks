@@ -32,7 +32,9 @@ export default class ImagesForm extends Component {
     this.fields.forEach(field => {
       this.setState({[field.name]:this.props[field.name]})
     })
+  }
 
+  componentDidMount(){
     if (this.state.apiToken){
       this.searchImages()
     }
@@ -57,15 +59,16 @@ export default class ImagesForm extends Component {
 
   renderInput(field) {
 
-    return (<FormControl
-      className={`${field.className} field-input`}
-      onBlur={(e) => this.props.updateState(field.name, e.target.value)}
-      id="formControlsText"
-      type={field.type}
-      label="Text"
-      placeholder={`Enter ${field.label.toLowerCase()}`}
-      defaultValue={this.state[field.name]}
-    />)
+    return (
+      <FormControl
+        className={`${field.className} field-input`}
+        onBlur={(e) => this.props.updateState(field.name, e.target.value)}
+        id="formControlsText"
+        type={field.type}
+        label="Text"
+        placeholder={`Enter ${field.label.toLowerCase()}`}
+        defaultValue={this.state[field.name]}
+      />)
   }
 
   render() {
