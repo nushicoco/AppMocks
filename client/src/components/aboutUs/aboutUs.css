@@ -5,9 +5,26 @@
 .website-url{
     position: absolute;
     bottom: 5%;
-    width: 80%;
+    width: 100%;
     text-align: center;
     left:0;
     font-size: medium;
     /*background-color: yellowgreen;*/
+}
+
+.website-url > a{
+    display: block;
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1170px) {
+    .website-url {
+        bottom: 10%;
+    }
+}
+
+
+@media screen and (min-width: 900px) and (max-width: 1100px) {
+    .website-url {
+        bottom: 20%;
+    }
 }
