@@ -93,7 +93,6 @@
 
 .in-phone-view{
     height: 500px;
-    /*background-color: yellow;*/
 }
 
 .field-label {
@@ -115,18 +114,18 @@
 
     .viewer-pane{
         height: auto;
-        width: 30%;
-        padding-top: 63.37%;
+        width: 24%;
+        padding-top: 48.5%;
     }
 
     .in-phone{
         top: 10%;
         left:unset;
-        width: 25%;
-        height: 80%;
+        width: 20%;
+        height: 68%;
         margin-left: 2%;
         margin-right: 2%;
-        margin-top:8%;
+        margin-top:4%;
         /*background-color: red;*/
     }
 
@@ -151,7 +150,7 @@
 
 @media screen and (min-width: 990px) and (max-width: 1200px) {
     .in-phone{
-        height: 65%;
+        height: 60%;
     }
 
     .in-phone-view{
