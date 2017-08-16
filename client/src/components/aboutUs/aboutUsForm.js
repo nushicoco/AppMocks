@@ -50,7 +50,7 @@ export default class AboutUsForm extends Component {
       style={{height: field.type === "textarea" ? '100px' : 'auto'}} // Hack b/c of react-bootstrap
       componentClass={field.type}
       label="Text"
-      placeholder="Enter text"
+      placeholder={`Enter ${field.label.toLowerCase()}`}
       defaultValue={this.state[field.name]}
     />)
   }

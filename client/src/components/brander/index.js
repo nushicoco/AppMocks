@@ -2,6 +2,7 @@
  * Created by einavcarmon on 15/08/2017.
  */
 import React, { Component } from 'react'
+import { Button, FormControl } from 'react-bootstrap'
 
 import './brander.css'
 
@@ -17,36 +18,24 @@ export class EmptyView extends Component {
 
 export class Brander extends Component {
 
-  render() {
-    return ( <div>
-        <button className="brander-button" onClick={() => this.props.updateState("colors", null)}>Reset</button>
-        <ImageUpload updateState={this.props.updateState}/>
-      </div>
-    )
-  }
-}
-
-class ImageUpload extends Component {
   constructor(props) {
     super(props);
     this.state = {
       file: '',
       imagePreviewUrl: ''
     };
-    this._handleImageChange = this._handleImageChange.bind(this);
-    this._handleSubmit = this._handleSubmit.bind(this);
   }
 
-  _handleSubmit(e) {
-    e.preventDefault();
-    this.uploadImage(this.state.file).then(this._updateColors.bind(this))
+  handleSubmit(e) {
+    e.preventDefault()
+    this.uploadImage(this.state.file).then(this.updateColors.bind(this))
   }
 
-  _updateColors (res) {
+  updateColors (res) {
     this.props.updateState("colors", JSON.parse(res).colors)
   }
 
-  _handleImageChange(e) {
+  handleImageChange(e) {
     e.preventDefault();
 
     let reader = new FileReader();
@@ -63,19 +52,34 @@ class ImageUpload extends Component {
   }
 
   render() {
-    let {imagePreviewUrl} = this.state;
-    let $imagePreview = null;
-    if (imagePreviewUrl) {
-      $imagePreview = (<img src={imagePreviewUrl} />);
-    }
+    let {imagePreviewUrl} = this.state
+    imagePreviewUrl = imagePreviewUrl ||  `${process.env.PUBLIC_URL}/img/your-logo-here.png`;
 
     return (
       <div>
-        <form onSubmit={this._handleSubmit}>
-          <input type="file" onChange={(e) => this._handleImageChange(e)} accept="image/*" name="imgUploader"/>
-          <button type="submit" onClick={(e) => this._handleSubmit(e)}>Upload Image</button>
+        <form onSubmit={ (e) => this.handleSubmit(e) }>
+          <div >
+            <label className="field-label">Upload your logo to brand your app</label>
+            <input type="file"
+                   className="file-input"
+                   onChange={ (e) => this.handleImageChange(e) }
+                   accept="image/*"
+                   name="imgUploader"/>
+          </div>
+          <div className="image-viewer" >
+            <img className="img-preview" src={imagePreviewUrl}/>
+          </div>
+          <Button className="btn-action"
+                  type="submit"
+                  onClick={ (e) => this.handleSubmit(e) }
+                  disabled={ !this.state.file }>
+            Upload Logo
+          </Button>
+          <Button className="btn-action"
+                  onClick={ () => this.props.updateState("colors", null)}>
+            Reset
+          </Button>
         </form>
-        {$imagePreview}
       </div>
     )
   }
@@ -91,7 +95,7 @@ class ImageUpload extends Component {
       xhr.open('post', '/palette', true);
 
       xhr.onload = function () {
-        if (this.status == 200) {
+        if (this.status === 200) {
           resolve(this.response);
         } else {
           reject(this.statusText);

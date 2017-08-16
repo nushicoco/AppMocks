@@ -1,3 +1,33 @@
 .brander-button {
     float: left;
 }
+
+.image-viewer{
+    height: 280px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    width:85%;
+    margin:auto;
+}
+
+.img-preview{
+    max-width:260px;
+    max-height:260px;
+    width: auto;
+    height: auto;
+}
+
+.file-input{
+    padding: 10px;
+}
+
+@media screen and (min-width: 50em) {
+    .img-preview {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .file-input{
+        padding-left: 10%;
+    }
+}

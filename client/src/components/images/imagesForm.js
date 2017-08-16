@@ -63,7 +63,7 @@ export default class ImagesForm extends Component {
       id="formControlsText"
       type={field.type}
       label="Text"
-      placeholder="Enter text"
+      placeholder={`Enter ${field.label.toLowerCase()}`}
       defaultValue={this.state[field.name]}
     />)
   }
