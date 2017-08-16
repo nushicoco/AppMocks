@@ -10,7 +10,7 @@ label {
 
 .empty-view {
     text-align: center;
-    padding: 19%;
+    padding: 10%;
     font-size: x-large;
 }
 
@@ -30,6 +30,13 @@ label {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
+}
+
+.hours-display {
+    max-height: 255px;
+    overflow-y: scroll;
+    border: 1px solid lightgray;
+    border-radius: 10px;
 }
 
 @media screen and (min-width: 50em) {

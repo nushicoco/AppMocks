@@ -42,7 +42,7 @@ export default class HoursDisplay extends Component {
 
   renderHoursTable(){
     return (
-
+      <div className="hours-display">
         <Table>
           <thead>
             <tr>
@@ -55,12 +55,13 @@ export default class HoursDisplay extends Component {
           {this.state.openingHours.map((hour,index) => this.renderHour(hour, index))}
           </tbody>
         </Table>
+      </div>
     )
   }
 
   render () {
     return (
-      <div className={!this.props.showOnMobile ? 'mobile-hide' : 'hours-display'}>
+      <div className={!this.props.showOnMobile ? 'mobile-hide' : ''}>
         <h4>Opening Hours</h4>
         {this.state.openingHours.length === 0
         ? this.renderEmptyView()
