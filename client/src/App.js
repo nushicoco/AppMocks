@@ -13,6 +13,7 @@ class App extends Component {
     this.state = {
       tabs:routes,
       currentTab:routes[0],
+
       // DEBUG todo remove this
       apiToken:"6162723-c19e8770101d3873c953539fa",
       companyName:"Como",
@@ -48,7 +49,6 @@ class App extends Component {
         {days: {start: "Tuesday", end:"Saturday"},
           hours: {start: "10:00", end:"16:00"}}
       ]
-
     }
   }
 
@@ -88,7 +88,8 @@ class App extends Component {
 
     return (
       <div className="App" style={this.getStyle()}>
-        <div> <h1>Einav's App Mocker</h1></div>
+        <div className="app-header">Einav's App Mocker</div>
+        <div className="divider"></div>
         <div className="app-container">
           <div className="right-panel">
             <div className="navigation">
