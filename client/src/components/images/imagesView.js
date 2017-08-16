@@ -14,7 +14,6 @@ export default class ImagesView extends Component {
         <div className="images-container">
           {this.props.images && this.props.images.map(img => <div key={img.url}><img src={img.url} alt={img.id}/></div>)}
         </div>
-        {/*<div className="footer"></div>*/}
       </div>
     )
   }

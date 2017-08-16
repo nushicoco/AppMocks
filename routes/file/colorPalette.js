@@ -1,6 +1,5 @@
 /**
  * This is copied from : https://github.com/zeke/get-image-colors/blob/master/index.js
- *  So I can change the number of colors
  */
 const getPixels = require('get-pixels')
 const getRgbaPalette = require('get-rgba-palette')

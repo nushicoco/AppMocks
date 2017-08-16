@@ -12,7 +12,6 @@
   padding: 20px;
   color: white;
   font-size: x-large;
-  /*border-bottom: white 7px solid;*/
 }
 
 .divider {
@@ -140,8 +139,6 @@
     .in-phone-view{
         height: 100%;
         width:100%;
-        /*float:right;*/
-        /*margin: 10% 12%;*/
     }
 }
 

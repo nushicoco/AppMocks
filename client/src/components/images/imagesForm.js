@@ -47,7 +47,6 @@ export default class ImagesForm extends Component {
   }
 
   searchImages() {
-    // key = 6162723-c19e8770101d3873c953539fa
     let query = this.state.imagesQuery ? this.state.imagesQuery.replace(" ","+") : ""
     let url = `https://pixabay.com/api/?key=${this.state.apiToken}&q=${query}&image_type=photo&pretty=true`
 
