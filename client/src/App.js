@@ -58,14 +58,13 @@ class App extends Component {
       <div className="App" style={this.getStyle()}>
         <div> <h1>Einav's App Mocker</h1></div>
         <div className="container">
-          <div className="right-panel inline">
-            <div className="navigation inline">
-              {/*<Brander updateState={this.updateState.bind(this)}/>*/}
+          <div className="right-panel">
+            <div className="navigation">
               <Navigator tabs={this.state.tabs} clickHandle={this.updateState.bind(this,"currentTab")} ></Navigator>
             </div>
-            <div className="main-pane inline">{this.renderComponent(this.state.currentTab.mainComponent)(this.state)}</div>
+            <div className="main-pane">{this.renderComponent(this.state.currentTab.mainComponent)(this.state)}</div>
             </div>
-          <div className="viewer-pane inline">
+          <div className="viewer-pane">
             <div className="phone-viewer">
               <img src={process.env.PUBLIC_URL + '/img/phone.png'} className="phone-image" alt="phone"/>
               <div className="in-phone">
