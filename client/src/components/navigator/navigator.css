@@ -1,0 +1,14 @@
+.nav-btn{
+    width: 25%;
+    white-space: normal;
+}
+
+.tab-active{
+    background-color: lightgrey;
+}
+
+.btn-group{
+    width: 90%;
+    display: flex;
+    margin: 0 5% 0;
+}

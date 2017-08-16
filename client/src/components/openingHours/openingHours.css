@@ -23,6 +23,7 @@ label {
 .btn-add {
     /*background-color: pink;*/
     padding: 8px 30px;
+    margin: 10%;
 }
 .button-container {
     text-align : center;

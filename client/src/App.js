@@ -59,7 +59,9 @@ class App extends Component {
         <div className="container">
           <div className="right-panel">
             <div className="navigation">
-              <Navigator tabs={this.state.tabs} clickHandle={this.updateState.bind(this,"currentTab")} ></Navigator>
+              <Navigator tabs={this.state.tabs}
+                         currentTab={this.state.currentTab.name}
+                         clickHandle={this.updateState.bind(this,"currentTab")} ></Navigator>
             </div>
             <div className="main-pane">{this.renderComponent(this.state.currentTab.mainComponent)(this.state)}</div>
             </div>
