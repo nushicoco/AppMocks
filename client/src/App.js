@@ -70,6 +70,7 @@ class App extends Component {
     }
 
     return {
+      backgroundImage:`url('${process.env.PUBLIC_URL}/img/phone.png')`,
       backgroundColor: color1,
       color:color2
     }
@@ -87,7 +88,7 @@ class App extends Component {
   render() {
 
     return (
-      <div className="App" style={this.getStyle()}>
+      <div className="App">
         <div className="app-header">Einav's App Mocker</div>
         <div className="divider"></div>
         <div className="app-container">
@@ -99,9 +100,9 @@ class App extends Component {
             </div>
             <div className="main-pane">{this.renderComponent(this.state.currentTab.mainComponent)(this.state)}</div>
             </div>
-          <div className="viewer-pane" style={{backgroundImage:`url('${process.env.PUBLIC_URL}/img/phone.png')`}}>
+          <div className="viewer-pane" style={this.getStyle()}>
             <div className="phone-viewer" >
-              <div className="in-phone">
+              <div className="in-phone" >
                 {this.renderComponent(this.state.currentTab.viewComponent)(this.state)}
               </div>
             </div>

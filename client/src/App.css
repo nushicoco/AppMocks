@@ -42,11 +42,12 @@
     /*background-color: blue;*/
     height: auto;
 
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
     height: 0;
     padding-top: 200%;
+    border-radius: 55px;
 }
 
 .phone-viewer{
@@ -126,7 +127,7 @@
     }
 
     .in-phone{
-        top: 10%;
+        top: 13%;
         left:unset;
         width: 20%;
         height: 68%;
