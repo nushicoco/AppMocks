@@ -6,7 +6,6 @@ import React, { Component } from 'react'
 import HoursDisplay from './hoursDisplay'
 
 import './openingHours.css'
-import '../../common.css'
 
 export default class OpeningHoursView extends Component {
 

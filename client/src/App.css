@@ -30,13 +30,19 @@
     border-radius: 10px;
     margin: 10px;
 }
+
 .viewer-pane{
     /*background-color: blue;*/
     height: auto;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 0;
+    padding-top: 200%;
 }
 
 .phone-viewer{
-    position: relative;
     width:100%;
 }
 
@@ -46,13 +52,15 @@
 
 .in-phone{
     position: absolute;
-    top: 10%;
+    bottom: -430px;
     left: 0;
-    width: 100%;
-    height: 90%;
-    overflow: hidden;
+    width: 75%;
+    overflow: scroll;
     font-size: smaller;
     word-wrap: break-word;
+    /*background-color: pink;*/
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .form-container{
@@ -65,8 +73,24 @@
   to { transform: rotate(360deg); }
 }
 
+.field-input{
+    width: 85%;
+    resize: none;
+    font-size: medium;
+}
+
+.in-phone-view{
+    height: 500px;
+    /*background-color: yellow;*/
+}
+
+.field-label {
+    padding: 10px 0px 10px 0px;
+    font-size: large;
+}
+
 @media screen and (min-width: 50em) {
-    .viewer-pane{
+    .viewer-pane {
         width: 35%;
     }
 
@@ -75,6 +99,40 @@
     }
 
     .container {
-        display:flex;
+        display: flex;
+    }
+
+    .viewer-pane{
+        height: auto;
+        padding-top: 72.37%;
+    }
+
+    .in-phone{
+        top: 10%;
+        left:unset;
+        width: 25%;
+        height: 70%;
+        margin: 6% 3%;
+    }
+
+    .in-phone-view{
+        height: 450px;
+        width:100%;
+        float:right;
+        margin: 10% 12%;
+    }
+}
+
+@media screen and (min-width: 50em) and (max-width: 990px) {
+    .in-phone{
+        /*top: 10%;*/
+        /*left:unset;*/
+        width: 20%;
+        height: 50%;
+        /*margin: 6% 3%;*/
+    }
+
+    .in-phone-view{
+        height: 300px;
     }
 }

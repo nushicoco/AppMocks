@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import {routes} from './routes'
 import Navigator from './components/navigator'
-import Brander from './components/brander'
 
 import './App.css';
 
@@ -64,9 +63,8 @@ class App extends Component {
             </div>
             <div className="main-pane">{this.renderComponent(this.state.currentTab.mainComponent)(this.state)}</div>
             </div>
-          <div className="viewer-pane">
-            <div className="phone-viewer">
-              <img src={process.env.PUBLIC_URL + '/img/phone.png'} className="phone-image" alt="phone"/>
+          <div className="viewer-pane" style={{backgroundImage:`url('${process.env.PUBLIC_URL}/img/phone.png')`}}>
+            <div className="phone-viewer" >
               <div className="in-phone">
                 {this.renderComponent(this.state.currentTab.viewComponent)(this.state)}
               </div>

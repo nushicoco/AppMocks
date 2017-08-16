@@ -4,7 +4,6 @@
 import React, { Component } from 'react'
 
 import './images.css'
-import '../../common.css'
 
 export default class ImagesView extends Component {
 

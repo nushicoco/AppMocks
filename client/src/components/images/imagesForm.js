@@ -5,7 +5,6 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import './images.css'
-import '../../common.css'
 
 export default class ImagesForm extends Component {
   constructor (props ){

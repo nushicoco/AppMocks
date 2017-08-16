@@ -4,7 +4,6 @@
 import React, { Component } from 'react'
 
 import './aboutUs.css'
-import '../../common.css'
 
 export default class AboutUsView extends Component {
 

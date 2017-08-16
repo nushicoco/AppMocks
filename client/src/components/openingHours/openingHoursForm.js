@@ -8,7 +8,6 @@ import HoursDisplay from './hoursDisplay'
 
 
 import './openingHours.css'
-import '../../common.css'
 
 export default class OpeningHoursForm extends Component {
   constructor (props ){

@@ -3,6 +3,12 @@ label {
     padding: 10px;
 }
 
+.empty-view {
+    text-align: center;
+    padding: 19%;
+    font-size: x-large;
+}
+
 .new-hour{
     border: 1px solid lightgrey;
     border-radius: 10px;

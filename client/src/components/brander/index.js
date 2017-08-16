@@ -17,10 +17,6 @@ export class EmptyView extends Component {
 
 export class Brander extends Component {
 
-  readFile(e){
-    console.log(e.target);
-  }
-
   render() {
     return ( <div>
         <button className="brander-button" onClick={() => this.props.updateState("colors", null)}>Reset</button>

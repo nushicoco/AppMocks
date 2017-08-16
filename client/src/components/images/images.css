@@ -1,8 +1,5 @@
 .images-container {
     overflow-y: scroll;
-
-    /*  todo need to change this to something responsive */
-    height: 300px;
 }
 
 .footer{

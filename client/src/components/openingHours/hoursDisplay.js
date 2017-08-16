@@ -33,18 +33,16 @@ export default class HoursDisplay extends Component {
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(nextProps);
     this.setState({openingHours:nextProps.hours || []})
   }
 
   renderEmptyView(){
-    return <div>Add Hours to see the opening hours display</div>
+    return <div className="empty-view">{!this.props.viewOnly && `Add Hours to see the opening hours display`}</div>
   }
 
   renderHoursTable(){
     return (
-      <div>
-        <h4>Opening Hours</h4>
+
         <Table>
           <thead>
             <tr>
@@ -57,15 +55,17 @@ export default class HoursDisplay extends Component {
           {this.state.openingHours.map((hour,index) => this.renderHour(hour, index))}
           </tbody>
         </Table>
-    </div>)
+    )
   }
 
   render () {
-    console.log(`rendering hours`, this.state.openingHours);
     return (
-      this.state.openingHours.length === 0
+      <div>
+        <h4>Opening Hours</h4>
+        {this.state.openingHours.length === 0
         ? this.renderEmptyView()
-        : this.renderHoursTable()
+        : this.renderHoursTable()}
+      </div>
     )
   }
 }
