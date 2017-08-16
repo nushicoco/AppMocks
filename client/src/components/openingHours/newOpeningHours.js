@@ -10,7 +10,6 @@ import { DaysInWeek, Hours } from '../../consts'
 import './openingHours.css'
 
 export default class NewOpeningHours extends React.Component {
-
   constructor () {
     super()
     this.state = {
@@ -19,14 +18,14 @@ export default class NewOpeningHours extends React.Component {
     }
   }
 
-  getDays(days){
+  getDays (days) {
     this.setState({days})
   }
-  getHours(hours){
+  getHours (hours) {
     this.setState({hours})
   }
 
-  addClicked() {
+  addClicked () {
     let newOpeningHours = {
       days: this.state.days,
       hours: this.state.hours
@@ -37,18 +36,17 @@ export default class NewOpeningHours extends React.Component {
 
   render () {
     return (
-      <div className="new-hour">
-        <TimesChooser updateTimes={this.getDays.bind(this)} times={DaysInWeek} label="Days  "/>
-        <TimesChooser updateTimes={this.getHours.bind(this)} times={Hours} label="Hours"/>
-        <div className="button-container">
-          <Button className="btn-action"
-                  onClick={() => this.addClicked()}
-                  disabled={!this.state.days.start || !this.state.hours.start}>
+      <div className='new-hour'>
+        <TimesChooser updateTimes={this.getDays.bind(this)} times={DaysInWeek} label='Days  ' />
+        <TimesChooser updateTimes={this.getHours.bind(this)} times={Hours} label='Hours' />
+        <div className='button-container'>
+          <Button className='btn-action'
+            onClick={() => this.addClicked()}
+            disabled={!this.state.days.start || !this.state.hours.start}>
             Add
           </Button>
         </div>
       </div>
     )
   }
-
 }

@@ -8,12 +8,11 @@ import HoursDisplay from './hoursDisplay'
 import './openingHours.css'
 
 export default class OpeningHoursView extends Component {
-
-  render() {
+  render () {
     return (
-      <div className="in-phone-view">
+      <div className='in-phone-view'>
         <h1>{this.props.companyName}</h1>
-        <HoursDisplay showOnMobile={ true } hours={this.props.openingHours} viewOnly={true}/>
+        <HoursDisplay showOnMobile hours={this.props.openingHours} viewOnly />
       </div>
     )
   }

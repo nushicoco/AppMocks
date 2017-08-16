@@ -12,23 +12,22 @@ import {Brander, EmptyView} from './components/brander'
 
 export const routes = [
   {
-    name:"about us",
+    name: 'about us',
     mainComponent: AboutUsForm,
     viewComponent: AboutUsView
   },
   {
-    name:"images",
+    name: 'images',
     mainComponent: ImagesForm,
     viewComponent: ImagesView
   },
   {
-    name:"opening hours",
+    name: 'opening hours',
     mainComponent: OpeningHoursForm,
     viewComponent: OpeningHoursView
-  }
-  ,
+  },
   {
-    name:"branding",
+    name: 'branding',
     mainComponent: Brander,
     viewComponent: EmptyView
   }

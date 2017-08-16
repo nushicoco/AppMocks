@@ -5,24 +5,19 @@ import React, { Component } from 'react'
 import { Table, Button } from 'react-bootstrap'
 
 export default class HoursDisplay extends Component {
-
   constructor (props) {
     super()
 
     this.state = {
-      openingHours : props.hours || []
+      openingHours: props.hours || []
     }
   }
 
-  getPretty(time){
-    if (!time.end || time.start === time.end){
-      return time.start
-    }
-    return `${time.start} - ${time.end}`
-
+  getPretty (time) {
+    return  (!time.end || time.start === time.end) ? time.start : `${time.start} - ${time.end}`
   }
 
-  renderHour(openingHour,index){
+  renderHour (openingHour, index) {
     return (
       <tr key={index}>
         {!this.props.viewOnly && <td><Button onClick={() => this.props.deleteHour(index)}>Delete</Button></td> }
@@ -32,27 +27,27 @@ export default class HoursDisplay extends Component {
     )
   }
 
-  componentWillReceiveProps(nextProps){
-    this.setState({openingHours:nextProps.hours || []})
+  componentWillReceiveProps (nextProps) {
+    this.setState({openingHours: nextProps.hours || []})
   }
 
-  renderEmptyView(){
-    return <div className="empty-view">{!this.props.viewOnly && `Add Hours to see the opening hours display`}</div>
+  renderEmptyView () {
+    return <div className='empty-view'>{!this.props.viewOnly && `Add Hours to see the opening hours display`}</div>
   }
 
-  renderHoursTable(){
+  renderHoursTable () {
     return (
-      <div className="hours-display">
+      <div className='hours-display'>
         <Table>
           <thead>
             <tr>
-              {!this.props.viewOnly && <th></th>}
+              {!this.props.viewOnly && <th />}
               <th>Days</th>
               <th>Hours</th>
             </tr>
           </thead>
           <tbody>
-          {this.state.openingHours.map((hour,index) => this.renderHour(hour, index))}
+            {this.state.openingHours.map((hour, index) => this.renderHour(hour, index))}
           </tbody>
         </Table>
       </div>

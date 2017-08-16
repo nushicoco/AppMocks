@@ -10,49 +10,49 @@ export default class TimesChooser extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      times:{},
+      times: {},
       startSelectedIndex: 0
     }
   }
-  updateStartTime(e) {
+  updateStartTime (e) {
     let times = { start: e.target.value }
     this.setState({
-      startSelectedIndex:e.target.selectedIndex,
+      startSelectedIndex: e.target.selectedIndex,
       times
     })
     this.props.updateTimes(times)
   }
 
-  updateEndTime(e) {
+  updateEndTime (e) {
     let times = {
-        start:this.state.times.start,
-        end: e.target.value
+      start: this.state.times.start,
+      end: e.target.value
     }
     this.setState({times})
     this.props.updateTimes(times)
   }
 
-  render() {
+  render () {
     return (
-        <div>
-          <label>{this.props.label}: </label>
-          <FormControl onChange={(e) => this.updateStartTime(e)}
-                       componentClass="select"
-                       placeholder="Select"
-                       className="time-select">
-            <option>Select</option>
-          { this.props.times.map((time,index) => <option data-index={index} key={index}>{time}</option>)}
-          </FormControl>
-          { this.state.times.start &&
+      <div>
+        <label>{this.props.label}: </label>
+        <FormControl onChange={(e) => this.updateStartTime(e)}
+          componentClass='select'
+          placeholder='Select'
+          className='time-select'>
+          <option>Select</option>
+          { this.props.times.map((time, index) => <option data-index={index} key={index}>{time}</option>)}
+        </FormControl>
+        { this.state.times.start &&
           <span> <label> To </label>
-            <FormControl componentClass="select"
-                         placeholder="Select"
-                         className="time-select"
-                         onChange={(e) => this.updateEndTime(e)}>
-            { this.props.times.slice(this.state.startSelectedIndex - 1).map((time,index) => <option data-index={index} key={index}>{time}</option>)}
+            <FormControl componentClass='select'
+              placeholder='Select'
+              className='time-select'
+              onChange={(e) => this.updateEndTime(e)}>
+              { this.props.times.slice(this.state.startSelectedIndex - 1).map((time, index) => <option data-index={index} key={index}>{time}</option>)}
             </FormControl></span>
           }
-        </div>
+      </div>
     )
   }
 }

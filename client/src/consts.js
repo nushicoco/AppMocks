@@ -3,5 +3,4 @@
  */
 export const DaysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
-export const Hours = Array.from(new Array(24),(val,index)=>`${index}:00`);
-
+export const Hours = Array.from(new Array(24), (val, index) => `${index}:00`)
