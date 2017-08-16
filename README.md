@@ -1,5 +1,5 @@
-Express + React Boilerplate
-===============
+App Mocker
+===========
 
 Setup:
  - Install all server packages `npm install`
