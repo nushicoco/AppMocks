@@ -15,7 +15,14 @@ export default class TimesChooser extends React.Component {
     }
   }
   updateStartTime (e) {
-    let times = { start: e.target.value }
+
+    let val = e.target.value
+
+    if (e.target.selectedIndex === 0){
+      val = null
+    }
+
+    let times = { start: val }
     this.setState({
       startSelectedIndex: e.target.selectedIndex,
       times
@@ -43,7 +50,7 @@ export default class TimesChooser extends React.Component {
           <option>Select</option>
           { this.props.times.map((time, index) => <option data-index={index} key={index}>{time}</option>)}
         </FormControl>
-        { this.state.times.start &&
+        { this.state.times.start && this.state.times.start !== "Select" &&
           <span> <label> To </label>
             <FormControl componentClass='select'
               placeholder='Select'

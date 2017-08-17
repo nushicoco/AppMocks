@@ -8,7 +8,6 @@ console.log(`Port = ${port}`)
 
 const express = require('express')
 const app = express()
-module.exports = app // for testing
 
 // POST Body Parsing:
 const bodyParser = require('body-parser')
