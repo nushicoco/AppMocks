@@ -1,5 +1,5 @@
 {
-  "name": "winder-crm",
+  "name": "app-mocks",
   "version": "1.0.0",
   "description": "CRM-lite",
   "main": "index.js",
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "concurrently \"npm run dev\" \"npm run client\"",
+    "start": "node server.js",
+    "startdev": "concurrently \"npm run dev\" \"npm run client\"",
     "client": "cd client && npm start",
     "bclient": "cd client && npm run build",
     "iclient": "cd client && npm i"
